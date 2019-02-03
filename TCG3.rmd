@@ -1,0 +1,52 @@
+#Read the data
+
+```{r}
+Ill_Temp<-read.csv("IllinoisTemp.csv")
+Ill_Temp
+```
+
+#Create a vector
+
+```{r}
+Tempincelcius<- Ill_Temp[,2]
+TempinFarenhit<-Ill_Temp[,3]
+Tempincelcius
+TempinFarenhit
+```
+
+#Find the mean of the first vector using For loop and seq_along
+
+```{r}
+
+Total<-0
+n<-0
+for(i in seq_along(Tempincelcius))
+{
+  Total<-Total+Tempincelcius[i]
+  n<-n+1
+}
+MeanTempincelcius<-Total/n
+MeanTempincelcius
+
+```
+#Create a function
+
+```{r}
+
+Meanofthevalues <- function(x)
+ {
+ sumTotal <<- sumTotal + x
+ elementCount <<- elementCount+1
+ }
+```
+
+#Using lapply
+
+```{r}
+sumTotal <<- 0
+elementCount <<- 0
+lapply(TempinFarenhit,Meanofthevalues)
+meantempinFarenhit<- sumTotal/elementCount
+meantempinFarenhit
+```
+
